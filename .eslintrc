@@ -1,0 +1,122 @@
+``
+`const path = require('path');
+
+module.exports = {
+  devtool: 'inline-source-map',
+  entry: {
+    main: "./lib/index.js",
+    test: "mocha!./test/index.js"
+  },
+  output: {
+    path: __dirname,
+    filename: "[name].bundle.js"
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        loader: "style-loader!css-loader"
+      }
+    ]
+  },
+  resolve: {
+    extensions: ['', '.js', '.json', '.css']
+  }
+};
+
+`
+``
+(edited)
+
+
+Leta Keane[ < 1 minute ago]
+eslint config file:
+    ``
+`{
+   "extends": "eslint:recommended",
+   "env": {
+     "browser": true,
+     "mocha": true,
+     "node": true,
+     "es6": true
+   },
+   "parserOptions": {
+     "sourceType": "module"
+   },
+   // Having a problem with one of these rules? Learn more about it here: https://eslint.org/docs/rules/
+   "rules": {
+     "brace-style": "error",
+     "comma-spacing": [
+       "warn", {
+         "before": false,
+         "after": true
+       }
+     ],
+     "curly": "error",
+     "eqeqeq": ["error", "always"],
+     "getter-return": ["error", { "allowImplicit": true }],
+
+     "indent": ["warn", 2],
+     "key-spacing": [
+       "error", {
+         "beforeColon": false,
+         "afterColon": true
+       }
+     ],
+     "keyword-spacing": [
+       "error", {
+         "before": true,
+         "after": true
+       }
+     ],
+     "linebreak-style": [
+       "error",
+       "unix"
+     ],
+     "max-len": [
+       "error",
+       80
+     ],
+     "new-cap": [
+       "error", {
+         "newIsCap": true
+       }
+     ],
+     "newline-after-var": [
+       "error",
+       "always"
+     ],
+     "no-template-curly-in-string": "error",
+     "object-shorthand": [
+       "error",
+       "always"
+     ],
+     "semi": ["error", "always"],
+     "semi-spacing": [
+       "error", {
+         "before": false,
+         "after": true
+       }
+     ],
+     "space-before-blocks": [
+       "error", {
+         "functions": "always",
+         "keywords": "always",
+         "classes": "always"
+       }
+     ],
+     "space-infix-ops": [
+       "error", {
+         "int32Hint": false
+       }
+     ]
+   },
+   "globals": {
+     "expect": true
+   }
+ }
+
+
+`
+``
