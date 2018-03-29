@@ -1,0 +1,30 @@
+{
+    "name": "tdd",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "scripts": {
+        "test": "mocha",
+        "start": "webpack",
+        "eslint": "./node_modules/eslint/bin/eslint.js ./lib/*.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/quinhill/tdd.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/quinhill/tdd/issues"
+    },
+    "homepage": "https://github.com/quinhill/tdd#readme",
+    "devDependencies": {
+        "chai": "^4.1.2",
+        "eslint": "^4.18.2",
+        "mocha": "^5.0.4"
+    }
+}
