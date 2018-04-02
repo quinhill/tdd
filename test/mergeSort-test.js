@@ -28,16 +28,17 @@ describe('merge sort', () => {
 
    it('should sort a large, random array', () => {
      let array = []
-     let min = -500;
-     let max = 500;
+     let min = -200;
+     let max = 200;
      
 
-     for(let i = 0; i < Math.abs(min) + max; i++){
+     for(let i = 0; i < 1000; i++){
        let number = Math.floor(Math.random() * (max - min) + min)
        array.push(number);
      }
      const sortedArray = mergeSort(array);
-     assert.isAtLeast(array[1], array[0])
+     const actualSort = array.sort((a, b) => a - b)
+     assert.deepEqual(sortedArray, actualSort);
    })
 
 })

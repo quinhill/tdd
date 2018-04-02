@@ -28,8 +28,8 @@ describe('quick sort', () => {
 
    it('should sort a large array', () => {
      let array = []
-     let min = -500;
-     let max = 500;
+     let min = -200;
+     let max = 200;
      
 
      for(let i = 0; i < Math.abs(min) + max; i++){
